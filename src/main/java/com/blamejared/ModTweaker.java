@@ -5,6 +5,7 @@ import com.blamejared.compat.chisel.Chisel;
 import com.blamejared.compat.inspirations.Inspirations;
 import com.blamejared.compat.tconstruct.TConstruct;
 import com.blamejared.compat.thaumcraft.handlers.ThaumCraft;
+import com.blamejared.compat.thermalexpansion.ThermalExpansion;
 import crafttweaker.*;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.event.*;
@@ -63,6 +64,9 @@ public class ModTweaker {
     
         if(Loader.isModLoaded("thaumcraft")) {
             ThaumCraft.registerCommands();
+        }
+        if(Loader.isModLoaded("thermalexpansion")) {
+            ThermalExpansion.registerCommands();
         }
     }
 }
