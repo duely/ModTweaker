@@ -14,6 +14,7 @@ import crafttweaker.api.item.*;
 import crafttweaker.api.entity.*;
 import crafttweaker.mc1120.commands.*;
 import cofh.thermalexpansion.util.managers.machine.*;
+import cofh.thermalexpansion.util.managers.device.*;
 import java.util.*;
 
 public class ThermalExpansion
@@ -143,6 +144,13 @@ public class ThermalExpansion
                 for(InsolatorManager.InsolatorRecipe recipe : InsolatorManager.getRecipeList()) {
                     CraftTweakerAPI.logCommand(String.format("mods.thermalexpansion.Insolator.removeRecipe(%s, %s);", ThermalExpansion.parseItemName(recipe.getPrimaryInput()), ThermalExpansion.parseItemName(recipe.getSecondaryInput())));
                 }
+                for(FactorizerManager.FactorizerRecipe recipe : FactorizerManager.getRecipeList(false)) {
+                    CraftTweakerAPI.logCommand(String.format("mods.thermalexpansion.Factorizer.removeRecipe(%s);", ThermalExpansion.parseItemName(recipe.getInput())));
+                }
+                for(FactorizerManager.FactorizerRecipe recipe : FactorizerManager.getRecipeList(true)) {
+                    CraftTweakerAPI.logCommand(String.format("mods.thermalexpansion.Factorizer.removeRecipeReverse(%s);", ThermalExpansion.parseItemName(recipe.getInput())));
+                }
+
 
                 sender.sendMessage(SpecialMessagesChat.getLinkToCraftTweakerLog("Thermal Expansion removal recipes generated", sender));
             }
